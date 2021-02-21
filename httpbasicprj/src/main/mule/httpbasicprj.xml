@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="55d52b2a-16d3-4492-bf19-f8eaaf74a34a" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="httpbasicprjFlow" doc:id="9c4c22b7-840f-4584-b14b-f811c3f86578" >
+		<http:listener doc:name="Listener" doc:id="696fede3-bb83-4f9f-b494-75731cb2f228" config-ref="HTTP_Listener_config" path="/testflow"/>
+		<set-payload value="Hello World Project working fine" doc:name="Set Payload" doc:id="312fd573-b968-4892-bf98-5dd71789e10e" />
+	</flow>
+</mule>
